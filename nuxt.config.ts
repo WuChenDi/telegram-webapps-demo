@@ -1,3 +1,5 @@
+import process from 'node:process'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
@@ -12,7 +14,7 @@ export default defineNuxtConfig({
       noscript: [{ children: 'Javascript is required.' }],
       script: [
         // { src: 'https://telegram.org/js/telegram-web-app.js' },
-        { src: '/telegram-web-app.js' }
+        { src: '/telegram-web-app.js' },
       ],
       title: '',
     },
@@ -44,7 +46,7 @@ export default defineNuxtConfig({
         target: `${process.env.VITE_APP_API_URL}`,
         changeOrigin: true,
         prependPath: true,
-      }
+      },
     },
   },
   ssr: false,

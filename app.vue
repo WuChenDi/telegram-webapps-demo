@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 const initLoadingRef = ref(true)
 
+// Hooks
 onMounted(async () => {
   try {
     WebApp.ready()
@@ -8,7 +9,8 @@ onMounted(async () => {
     // WebApp.isClosingConfirmationEnabled = true;
     WebApp.enableClosingConfirmation()
     initLoadingRef.value = false
-  } catch (error) {
+  }
+  catch (error) {
     // initLoadingRef.value = false
     Logger.error(error)
   }
@@ -16,7 +18,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <Loading vertical v-if="initLoadingRef" height="100vh" />
+  <Loading v-if="initLoadingRef" vertical height="100vh" />
   <NuxtLayout v-else>
     <NuxtPage />
     <!-- <NuxtWelcome /> -->
