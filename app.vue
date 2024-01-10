@@ -9,8 +9,7 @@ onMounted(async () => {
     // WebApp.isClosingConfirmationEnabled = true;
     WebApp.enableClosingConfirmation()
     initLoadingRef.value = false
-  }
-  catch (error) {
+  } catch (error) {
     // initLoadingRef.value = false
     Logger.error(error)
   }
