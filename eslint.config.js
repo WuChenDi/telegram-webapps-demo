@@ -11,9 +11,10 @@ export default antfu(
       'types/telegram.d.ts',
       // '**/*.d.ts',
     ],
-    // rules: {
-    //   'style/brace-style': 'off',
-    // },
+    rules: {
+      curly: ['error', 'all'],
+      // 'style/brace-style': 'off',
+    },
     // stylistic: {
     //   'style/brace-style': ['error', '1tbs', { allowSingleLine: true }],
     // },
