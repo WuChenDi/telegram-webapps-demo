@@ -1,4 +1,3 @@
-/* eslint-disable ts/no-unsafe-argument */
 /* eslint-disable no-console */
 const { VITE_LOG_ENABLE } = import.meta.env
 

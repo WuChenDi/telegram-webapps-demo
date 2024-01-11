@@ -1,17 +1,17 @@
 .overflow {
-	&-auto {
-		overflow: auto;
-	}
+  &-auto {
+    overflow: auto;
+  }
 
-	&-hidden {
-		overflow: hidden;
-	}
+  &-hidden {
+    overflow: hidden;
+  }
 }
 
 .invisibility {
-	visibility: hidden;
+  visibility: hidden;
 }
 
 .user-select-none {
-	user-select: none;
+  user-select: none;
 }

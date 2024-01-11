@@ -15,11 +15,13 @@ withDefaults(defineProps<Props>(), {
 <template>
   <div class="init-loading-container" :style="{ height }">
     <div
-      class="init-loading init-loading--circular" :class="[
-        { 'init-loading--vertical': vertical },
-      ]"
+      class="init-loading init-loading--circular"
+      :class="[{ 'init-loading--vertical': vertical }]"
     >
-      <span class="init-loading__spinner init-loading__spinner--circular" style="width: 24px; height: 24px">
+      <span
+        class="init-loading__spinner init-loading__spinner--circular"
+        style="width: 24px; height: 24px"
+      >
         <svg viewBox="25 25 50 50" class="init-loading__circular">
           <circle cx="50" cy="50" r="20" fill="none" />
         </svg>
