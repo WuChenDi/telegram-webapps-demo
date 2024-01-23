@@ -30,7 +30,7 @@ export default defineComponent({
     return () => (
       <>
         {initLoadingRef.value ? (
-          <Loading vertical height='100vh' />
+          <Loading vertical height="100vh" />
         ) : (
           <NuxtLayout>
             <NuxtPage />

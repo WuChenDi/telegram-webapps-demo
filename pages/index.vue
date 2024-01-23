@@ -15,7 +15,9 @@ onMounted(() => {
   <div id="home-container">
     index.vue <br />
 
-    <nuxt-link to="/menu"> Menu </nuxt-link>
+    <nuxt-link to="/menu">
+      Menu
+    </nuxt-link>
   </div>
 </template>
 

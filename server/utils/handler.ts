@@ -1,7 +1,7 @@
 import type { EventHandler, EventHandlerRequest } from 'h3'
 
 export function defineWrappedResponseHandler<T extends EventHandlerRequest, D>(
-  handler: EventHandler<T, D>
+  handler: EventHandler<T, D>,
 ): EventHandler<T, D> {
   return defineEventHandler<T>(async (event) => {
     try {

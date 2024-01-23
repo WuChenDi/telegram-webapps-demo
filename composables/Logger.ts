@@ -8,13 +8,15 @@ function getTimestamp() {
 }
 
 function logWithTimestamp(message?: any, ...optionalParams: any[]) {
-  if (VITE_LOG_ENABLE === 'true')
+  if (VITE_LOG_ENABLE === 'true') {
     console.log(`[${getTimestamp()}]`, message, ...optionalParams)
+  }
 }
 
 function infoWithTimestamp(message?: any, ...optionalParams: any[]) {
-  if (VITE_LOG_ENABLE === 'true')
+  if (VITE_LOG_ENABLE === 'true') {
     console.info(`[${getTimestamp()}]`, message, ...optionalParams)
+  }
 }
 
 function warnWithTimestamp(message?: any, ...optionalParams: any[]) {
