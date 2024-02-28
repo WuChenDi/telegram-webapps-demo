@@ -8,6 +8,7 @@ import { defineComponent, onMounted } from 'vue'
 import { NuxtLayout, NuxtPage } from '#components'
 
 import Loading from '~/components/loading.vue'
+import './styles/app.css'
 
 export default defineComponent({
   name: 'App',

@@ -1,4 +1,11 @@
 import process from 'node:process'
+import pkg from './package.json'
+
+const proxyPaths = [
+  '/api',
+  '/tgapi',
+  '/user',
+]
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -19,13 +26,14 @@ export default defineNuxtConfig({
       title: '',
     },
     keepalive: true,
+    pageTransition: { name: 'page-slide', mode: 'out-in' },
   },
-  plugins: [
-    {
-      src: '@/plugins/vconsole.ts',
-      ssr: false,
+  runtimeConfig: {
+    public: {
+      DATE: `${new Date().toLocaleString()}.${new Date().getMilliseconds()}`,
+      VERSION: pkg.version,
     },
-  ],
+  },
   css: ['@/styles/scss/index.scss', '@/styles/scss/public/index.scss'],
   devServer: {
     host: process.env.SERVER_HOST,
@@ -41,13 +49,15 @@ export default defineNuxtConfig({
   modules: ['@vueuse/nuxt', 'nuxt-purgecss', 'nuxt-svgo'],
   nitro: {
     compressPublicAssets: true,
-    devProxy: {
-      '/api': {
-        target: `${process.env.VITE_APP_API_URL}`,
-        changeOrigin: true,
-        prependPath: true,
-      },
-    },
+    devProxy: Object.fromEntries(
+      proxyPaths.map(path => [
+        path,
+        {
+          changeOrigin: true,
+          target: `${process.env.VITE_APP_API_URL}/${path}`,
+        },
+      ]),
+    ),
   },
   ssr: false,
   typescript: {
@@ -71,14 +81,6 @@ export default defineNuxtConfig({
           additionalData: '@import "@/styles/scss/global-import.scss";',
         },
       },
-    },
-    server: {
-      // hmr: {
-      //   clientPort: Number(process.env.HMR_CLIENT_PORT) || undefined,
-      //   path: process.env.HMR_PATH,
-      //   port: Number(process.env.HMR_PORT) || undefined,
-      //   protocol: process.env.HMR_PROTOCOL,
-      // },
     },
   },
 })
