@@ -46,7 +46,7 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['./composables/*', './composables/**/*'],
   },
-  modules: ['@vueuse/nuxt', 'nuxt-purgecss', 'nuxt-svgo'],
+  modules: ['@vueuse/nuxt', 'nuxt-purgecss', '@nuxtjs/i18n', 'nuxt-svgo'],
   nitro: {
     compressPublicAssets: true,
     devProxy: Object.fromEntries(
