@@ -34,6 +34,7 @@ export default defineNuxtConfig({
       VERSION: pkg.version,
     },
   },
+  devtools: { enabled: false },
   css: ['@/styles/scss/index.scss', '@/styles/scss/public/index.scss'],
   devServer: {
     host: process.env.SERVER_HOST,
