@@ -81,8 +81,9 @@ export default defineNuxtConfig({
         /color-(banker|player|tie)/,
 
         // Public
-        /--unocss--/g,
+        /--unocss--/,
         /-\[\S+\]/,
+        /__uno_hash_(\w{6})/,
         /swal2/,
       ],
       standard: [
