@@ -47,7 +47,13 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['./composables/*', './composables/**/*'],
   },
-  modules: ['@vueuse/nuxt', 'nuxt-purgecss', '@nuxtjs/i18n', 'nuxt-svgo'],
+  modules: [
+    '@vueuse/nuxt',
+    '@nuxtjs/i18n',
+    '@unocss/nuxt',
+    'nuxt-purgecss',
+    'nuxt-svgo',
+  ],
   nitro: {
     compressPublicAssets: true,
     devProxy: Object.fromEntries(
@@ -59,6 +65,41 @@ export default defineNuxtConfig({
         },
       ]),
     ),
+  },
+  purgecss: {
+    enabled: true,
+    safelist: {
+      deep: [
+        /** Scss */
+        // Background color
+        /bg-(banker|player|tie)/,
+
+        // Chip
+        /chip-\d+/,
+
+        // Color
+        /color-(banker|player|tie)/,
+
+        // Public
+        /--unocss--/,
+        /-\[\S+\]/,
+        /__uno_hash_(\w{6})/,
+        /swal2/,
+      ],
+      standard: [
+        /-(appear|enter|leave)(|-(active|from|to))$/,
+        /.*data-v-.*/,
+        /:deep/,
+        /:global/,
+        /:slotted/,
+        /^(?!cursor-move).+-move$/,
+        /^nuxt-link(|-exact)-active$/,
+        '__nuxt',
+        'body',
+        'html',
+        'nuxt-progress',
+      ],
+    },
   },
   ssr: false,
   typescript: {

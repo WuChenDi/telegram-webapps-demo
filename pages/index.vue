@@ -28,7 +28,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div id="home-container">
+  <div class="max-h-svh py-3 px-4 bg-color-006934 color-fff">
     index.vue <br />
 
     language: {{ $t('common.current_language') }} <br />
@@ -48,10 +48,4 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
-#home-container {
-  background-color: #006934;
-  max-height: 100svh;
-  padding: 0.7rem 1rem;
-  color: #fff;
-}
 </style>
