@@ -49,10 +49,10 @@ export default defineNuxtConfig({
   },
   modules: [
     '@vueuse/nuxt',
-    'nuxt-purgecss',
     '@nuxtjs/i18n',
-    'nuxt-svgo',
     '@unocss/nuxt',
+    'nuxt-purgecss',
+    'nuxt-svgo',
   ],
   nitro: {
     compressPublicAssets: true,
@@ -65,6 +65,39 @@ export default defineNuxtConfig({
         },
       ]),
     ),
+  },
+  purgecss: {
+    enabled: true,
+    safelist: {
+      deep: [
+        /** Scss */
+        // Background color
+        /bg-(banker|player|tie)/,
+
+        // Chip
+        /chip-\d+/,
+
+        // Color
+        /color-(banker|player|tie)/,
+
+        // Public
+        /--unocss--/g,
+        /-\[\S+\]/,
+        /swal2/,
+      ],
+      standard: [
+        /** Scss */
+
+        // Chip
+        'chip-mode-discount',
+
+        // Public
+        'body',
+        'html',
+        'm-0',
+        'p-0',
+      ],
+    },
   },
   ssr: false,
   typescript: {
