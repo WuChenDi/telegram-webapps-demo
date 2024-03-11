@@ -87,16 +87,17 @@ export default defineNuxtConfig({
         /swal2/,
       ],
       standard: [
-        /** Scss */
-
-        // Chip
-        'chip-mode-discount',
-
-        // Public
+        /-(appear|enter|leave)(|-(active|from|to))$/,
+        /.*data-v-.*/,
+        /:deep/,
+        /:global/,
+        /:slotted/,
+        /^(?!cursor-move).+-move$/,
+        /^nuxt-link(|-exact)-active$/,
+        '__nuxt',
         'body',
         'html',
-        'm-0',
-        'p-0',
+        'nuxt-progress',
       ],
     },
   },
