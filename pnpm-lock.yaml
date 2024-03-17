@@ -19,6 +19,9 @@ devDependencies:
   '@nuxtjs/i18n':
     specifier: ^8.2.0
     version: 8.2.0(rollup@4.13.0)(vue@3.4.21)
+  '@types/telegram-web-app':
+    specifier: ^7.1.0
+    version: 7.1.0
   '@unocss/nuxt':
     specifier: ^0.58.6
     version: 0.58.6(postcss@8.4.35)(rollup@4.13.0)(vite@5.1.6)(webpack@5.90.3)
@@ -2264,6 +2267,10 @@ packages:
 
   /@types/semver@7.5.8:
     resolution: {integrity: sha512-I8EUhyrgfLrcTkzV3TSsGyl1tSuPrEDzr0yd5m90UgNxQkyDXULk3b6MlQqTCpZpNtWe1K0hzclnZkTcLBe2UQ==}
+    dev: true
+
+  /@types/telegram-web-app@7.1.0:
+    resolution: {integrity: sha512-uQ34+6jhCFq38wHhD6PkmIkgtBTfSWGqGenALUHcaR7Cks6abOskDrgcqwAyfrts0YZ2A/ywM1fLDGQkHjykUQ==}
     dev: true
 
   /@types/unist@2.0.10:
