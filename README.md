@@ -1,75 +1,33 @@
-# Nuxt 3 Minimal Starter
+# 🚀 telegram-webapps-demo
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Technology stack: Nuxt + TypeScript + i18n
 
-## Setup
+## Getting Started
 
-Make sure to install the dependencies:
+First, set up your `.env` file by copying the example:
 
 ```bash
-# npm
-npm install
+cd telegram-webapps-demo
+cp .env.example .env
+```
 
-# pnpm
+Then, run the development server:
+
+Recommended versions:
+
+- node ^v20.11.1
+- pnpm ^8.15.4
+
+```bash
 pnpm install
 
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
 pnpm run dev
 
-# yarn
-yarn dev
-
-# bun
-bun run dev
+pnpm run generate
 ```
 
-## Production
+Open [http://localhost:4000](http://localhost:4000) with your browser to see the result.
 
-Build the application for production:
+## 📜 License
 
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+[MIT](./LICENSE) License &copy; 2024-PRESENT [wudi](https://github.com/WuChenDi)
