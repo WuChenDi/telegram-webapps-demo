@@ -30,4 +30,4 @@ Open [http://localhost:4000](http://localhost:4000) with your browser to see the
 
 ## 📜 License
 
-[MIT](./LICENSE) License &copy; 2024-PRESENT [wudi](https://github.com/WuChenDi)
+[MIT](./LICENSE) License &copy; 2024-PRESENT [cdLab996](https://github.com/cdLab996)
