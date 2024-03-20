@@ -50,4 +50,7 @@
   ],
   "i18n-ally.sourceLanguage": "enUs",
   "i18n-ally.displayLanguage": "enUs",
+  "i18n-ally.parsers.typescript.compilerOptions": {
+    "moduleResolution": "node"
+  }
 }
