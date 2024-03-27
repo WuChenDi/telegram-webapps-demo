@@ -1,5 +1,5 @@
 {
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
@@ -9,7 +9,5 @@
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
-  "prettier.enable": true,
-  "eslint.validate": ["vue", "ts", "tsx"],
-  "stylelint.validate": ["css", "scss", "postcss", "vue"]
+  "prettier.enable": true
 }
