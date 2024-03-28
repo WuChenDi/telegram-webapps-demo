@@ -14,11 +14,11 @@ dependencies:
 
 devDependencies:
   '@cdlab996/eslint-config-vue':
-    specifier: ^0.0.6-beta.3
-    version: 0.0.6-beta.3(@typescript-eslint/parser@6.21.0)(eslint@8.56.0)(prettier@3.2.5)(typescript@5.3.3)
+    specifier: ^0.0.6-beta.4
+    version: 0.0.6-beta.4(@typescript-eslint/parser@6.21.0)(eslint@8.56.0)(prettier@3.2.5)(typescript@5.3.3)
   '@cdlab996/prettier-config':
-    specifier: ^0.0.6-beta.3
-    version: 0.0.6-beta.3
+    specifier: ^0.0.6-beta.4
+    version: 0.0.6-beta.4
   '@vueuse/nuxt':
     specifier: ^10.7.1
     version: 10.7.1(nuxt@3.9.1)(vue@3.4.6)
@@ -409,8 +409,8 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@cdlab996/eslint-config-basic@0.0.6-beta.3(@typescript-eslint/eslint-plugin@6.21.0)(@typescript-eslint/parser@6.21.0)(eslint@8.56.0)(prettier@3.2.5)(typescript@5.3.3):
-    resolution: {integrity: sha512-rhn4KdOpRBJ87PPYPZUPbJS/4A9kxZ6QrCaNp4VH/rB3uylSzswNdFgelKmGm6AY6BT4MahLipbdGUiIkdEukw==}
+  /@cdlab996/eslint-config-basic@0.0.6-beta.4(@typescript-eslint/eslint-plugin@6.21.0)(@typescript-eslint/parser@6.21.0)(eslint@8.56.0)(prettier@3.2.5)(typescript@5.3.3):
+    resolution: {integrity: sha512-Ej2V0wZJMjLUuZMXgyftoCubGLBfmrdJ6WY2ggyNs/02gSvj1t6MKxtzAeMTPdMpNCBho+uiFlauJtiaPyOgMw==}
     peerDependencies:
       eslint: '>=7.4.0'
     dependencies:
@@ -442,13 +442,13 @@ packages:
       - typescript
     dev: true
 
-  /@cdlab996/eslint-config-ts@0.0.6-beta.3(eslint@8.56.0)(prettier@3.2.5)(typescript@5.3.3):
-    resolution: {integrity: sha512-fpcIwPYV7FvkrLiBWMYtQtrcB68cBUdhGRVIfz2UySL/wn+/Mgzl8vlKoZt+5vKmuj9XTK65a9qRHpyiq0ddfA==}
+  /@cdlab996/eslint-config-ts@0.0.6-beta.4(eslint@8.56.0)(prettier@3.2.5)(typescript@5.3.3):
+    resolution: {integrity: sha512-PJ6EY/Hqhw+KWoSTHB2J5ITQYbKMBguuwMJT6wuJl6yyOJd2TAQJXuLOQKdjdLi0IPOENEvr60GFnnpWj6bBIA==}
     peerDependencies:
       eslint: '>=7.4.0'
       typescript: '>=3.9'
     dependencies:
-      '@cdlab996/eslint-config-basic': 0.0.6-beta.3(@typescript-eslint/eslint-plugin@6.21.0)(@typescript-eslint/parser@6.21.0)(eslint@8.56.0)(prettier@3.2.5)(typescript@5.3.3)
+      '@cdlab996/eslint-config-basic': 0.0.6-beta.4(@typescript-eslint/eslint-plugin@6.21.0)(@typescript-eslint/parser@6.21.0)(eslint@8.56.0)(prettier@3.2.5)(typescript@5.3.3)
       '@typescript-eslint/eslint-plugin': 6.21.0(@typescript-eslint/parser@6.21.0)(eslint@8.56.0)(typescript@5.3.3)
       '@typescript-eslint/parser': 6.21.0(eslint@8.56.0)(typescript@5.3.3)
       eslint: 8.56.0
@@ -463,13 +463,13 @@ packages:
       - supports-color
     dev: true
 
-  /@cdlab996/eslint-config-vue@0.0.6-beta.3(@typescript-eslint/parser@6.21.0)(eslint@8.56.0)(prettier@3.2.5)(typescript@5.3.3):
-    resolution: {integrity: sha512-DWMdDDaCsn6EW55JwwcQEdTN7ePhJUZWVD/b03Cs2Ou/Ibzwar98oB5Rn4NuggUxy1hdc1VgJ6qFRQpnC+MJcQ==}
+  /@cdlab996/eslint-config-vue@0.0.6-beta.4(@typescript-eslint/parser@6.21.0)(eslint@8.56.0)(prettier@3.2.5)(typescript@5.3.3):
+    resolution: {integrity: sha512-5gyntoVuvKGC4jAZbZifs+rs2fOn3IV3svkUUYfrc3NaxWUbL9rCxfayKX1000y3kARnxUTvpSoSuLxArpW3kw==}
     peerDependencies:
       eslint: '>=7.4.0'
     dependencies:
-      '@cdlab996/eslint-config-basic': 0.0.6-beta.3(@typescript-eslint/eslint-plugin@6.21.0)(@typescript-eslint/parser@6.21.0)(eslint@8.56.0)(prettier@3.2.5)(typescript@5.3.3)
-      '@cdlab996/eslint-config-ts': 0.0.6-beta.3(eslint@8.56.0)(prettier@3.2.5)(typescript@5.3.3)
+      '@cdlab996/eslint-config-basic': 0.0.6-beta.4(@typescript-eslint/eslint-plugin@6.21.0)(@typescript-eslint/parser@6.21.0)(eslint@8.56.0)(prettier@3.2.5)(typescript@5.3.3)
+      '@cdlab996/eslint-config-ts': 0.0.6-beta.4(eslint@8.56.0)(prettier@3.2.5)(typescript@5.3.3)
       eslint: 8.56.0
       eslint-plugin-vue: 9.19.2(eslint@8.56.0)
       local-pkg: 0.4.3
@@ -485,8 +485,8 @@ packages:
       - typescript
     dev: true
 
-  /@cdlab996/prettier-config@0.0.6-beta.3:
-    resolution: {integrity: sha512-nQ2Bd3oRjLJifIlCVez2A6h1GNCirDEu290Fur1DiEPO58sT5rMUED6YRZFhXhjSdMNefObLKyGIUnSwYrJXRw==}
+  /@cdlab996/prettier-config@0.0.6-beta.4:
+    resolution: {integrity: sha512-P8ZGGYujDNJTfS1F1/D5zzKiNsXwSuzBSMXPtsK65+kDTKzMJSZPIa5YIulOMqpb2jSykIRPQ05/lLd7pJHiUQ==}
     dev: true
 
   /@cloudflare/kv-asset-handler@0.3.0:
