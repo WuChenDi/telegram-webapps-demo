@@ -1,4 +1,11 @@
 import process from 'node:process'
+import pkg from './package.json'
+
+const proxyPaths = [
+  '/api',
+  '/tgapi',
+  '/user',
+]
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -19,13 +26,15 @@ export default defineNuxtConfig({
       title: '',
     },
     keepalive: true,
+    pageTransition: { name: 'page-slide', mode: 'out-in' },
   },
-  plugins: [
-    {
-      src: '@/plugins/vconsole.ts',
-      ssr: false,
+  runtimeConfig: {
+    public: {
+      DATE: `${new Date().toLocaleString()}.${new Date().getMilliseconds()}`,
+      VERSION: pkg.version,
     },
-  ],
+  },
+  devtools: { enabled: false },
   css: ['@/styles/scss/index.scss', '@/styles/scss/public/index.scss'],
   devServer: {
     host: process.env.SERVER_HOST,
@@ -38,15 +47,58 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['./composables/*', './composables/**/*'],
   },
-  modules: ['@vueuse/nuxt', 'nuxt-purgecss', 'nuxt-svgo'],
+  modules: [
+    '@vueuse/nuxt',
+    '@nuxtjs/i18n',
+    '@unocss/nuxt',
+    'nuxt-purgecss',
+    'nuxt-svgo',
+  ],
   nitro: {
     compressPublicAssets: true,
-    devProxy: {
-      '/api': {
-        target: `${process.env.VITE_APP_API_URL}`,
-        changeOrigin: true,
-        prependPath: true,
-      },
+    devProxy: Object.fromEntries(
+      proxyPaths.map(path => [
+        path,
+        {
+          changeOrigin: true,
+          target: `${process.env.VITE_APP_API_URL}/${path}`,
+        },
+      ]),
+    ),
+  },
+  purgecss: {
+    enabled: true,
+    safelist: {
+      deep: [
+        /** Scss */
+        // Background color
+        /bg-(banker|player|tie)/,
+
+        // Chip
+        /chip-\d+/,
+
+        // Color
+        /color-(banker|player|tie)/,
+
+        // Public
+        /--unocss--/,
+        /-\[\S+\]/,
+        /__uno_hash_(\w{6})/,
+        /swal2/,
+      ],
+      standard: [
+        /-(appear|enter|leave)(|-(active|from|to))$/,
+        /.*data-v-.*/,
+        /:deep/,
+        /:global/,
+        /:slotted/,
+        /^(?!cursor-move).+-move$/,
+        /^nuxt-link(|-exact)-active$/,
+        '__nuxt',
+        'body',
+        'html',
+        'nuxt-progress',
+      ],
     },
   },
   ssr: false,
@@ -71,14 +123,6 @@ export default defineNuxtConfig({
           additionalData: '@import "@/styles/scss/global-import.scss";',
         },
       },
-    },
-    server: {
-      // hmr: {
-      //   clientPort: Number(process.env.HMR_CLIENT_PORT) || undefined,
-      //   path: process.env.HMR_PATH,
-      //   port: Number(process.env.HMR_PORT) || undefined,
-      //   protocol: process.env.HMR_PROTOCOL,
-      // },
     },
   },
 })
