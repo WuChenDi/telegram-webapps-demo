@@ -17,7 +17,8 @@
     "vconsole": "^3.15.1"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.12.1",
+    "@cdlab996/eslint-config-vue": "^0.0.6-beta.4",
+    "@cdlab996/prettier-config": "^0.0.6-beta.4",
     "@nuxtjs/i18n": "^8.3.0",
     "@types/telegram-web-app": "^7.2.1",
     "@unocss/nuxt": "^0.58.6",
@@ -26,6 +27,7 @@
     "nuxt": "^3.11.1",
     "nuxt-purgecss": "^2.0.0",
     "nuxt-svgo": "^4.0.0",
+    "prettier": "^3.2.5",
     "sass": "^1.74.1",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
