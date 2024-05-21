@@ -1,11 +1,7 @@
 import process from 'node:process'
 import pkg from './package.json'
 
-const proxyPaths = [
-  '/api',
-  '/tgapi',
-  '/user',
-]
+const proxyPaths = ['/api', '/tgapi', '/user']
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -47,23 +43,17 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['./composables/*', './composables/**/*'],
   },
-  modules: [
-    '@vueuse/nuxt',
-    '@nuxtjs/i18n',
-    '@unocss/nuxt',
-    'nuxt-purgecss',
-    'nuxt-svgo',
-  ],
+  modules: ['@vueuse/nuxt', '@nuxtjs/i18n', '@unocss/nuxt', 'nuxt-purgecss', 'nuxt-svgo'],
   nitro: {
     compressPublicAssets: true,
     devProxy: Object.fromEntries(
-      proxyPaths.map(path => [
+      proxyPaths.map((path) => [
         path,
         {
           changeOrigin: true,
           target: `${process.env.VITE_APP_API_URL}/${path}`,
         },
-      ]),
+      ])
     ),
   },
   purgecss: {
@@ -101,18 +91,18 @@ export default defineNuxtConfig({
       ],
     },
   },
-  ssr: false,
-  typescript: {
-    tsConfig: {
-      compilerOptions: {
-        noImplicitOverride: true,
-        noUncheckedIndexedAccess: true,
-        noUnusedLocals: true,
-        noUnusedParameters: true,
-      },
-    },
-    typeCheck: true,
-  },
+  // ssr: false,
+  // typescript: {
+  //   tsConfig: {
+  //     compilerOptions: {
+  //       noImplicitOverride: true,
+  //       noUncheckedIndexedAccess: true,
+  //       noUnusedLocals: true,
+  //       noUnusedParameters: true,
+  //     },
+  //   },
+  //   typeCheck: true,
+  // },
   vite: {
     build: {
       chunkSizeWarningLimit: 1024,
