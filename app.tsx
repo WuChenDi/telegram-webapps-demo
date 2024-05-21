@@ -1,6 +1,6 @@
 import { defineComponent, onMounted } from 'vue'
 
-import { sleep } from 'telegram/Helpers'
+// import { sleep } from 'telegram/Helpers'
 
 /**
  * nuxt components
@@ -13,6 +13,20 @@ import { getLanguageCode } from '~/composables/utils'
 
 import Loading from '~/components/loading.vue'
 import './styles/app.css'
+
+const isBrowser = typeof window !== 'undefined'
+const isNode = !isBrowser
+
+/**
+ * Sleeps a specified amount of time
+ * @param ms time in milliseconds
+ * @param isUnref make a timer unref'ed
+ * @returns {Promise}
+ */
+const sleep = (ms: number, isUnref: boolean = false) =>
+  new Promise((resolve) =>
+    isUnref && isNode ? setTimeout(resolve, ms).unref() : setTimeout(resolve, ms)
+  )
 
 export default defineComponent({
   name: 'App',
@@ -59,7 +73,7 @@ export default defineComponent({
     return () => (
       <>
         {initLoadingRef.value ? (
-          <Loading vertical height="100vh" />
+          <Loading vertical height='100vh' />
         ) : (
           <NuxtLayout>
             <NuxtPage />

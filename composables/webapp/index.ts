@@ -1,4 +1,4 @@
-export const WebApp = window.Telegram?.WebApp
+export const WebApp = window?.Telegram?.WebApp
 
 export function hideWebAppButtons() {
   // backButton.hide();
