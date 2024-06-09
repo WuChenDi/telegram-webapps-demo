@@ -15,8 +15,8 @@ Then, run the development server:
 
 Recommended versions:
 
-- node ^v20.11.1
-- pnpm ^8.15.4
+- node >= v20.14.0 (LTS)
+- pnpm >= 9.0.0
 
 ```bash
 pnpm install

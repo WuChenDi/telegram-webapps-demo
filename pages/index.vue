@@ -41,11 +41,8 @@ onMounted(() => {
     </select>
     <br />
 
-    <nuxt-link to="/menu">
-      Menu
-    </nuxt-link>
+    <nuxt-link to="/menu"> Menu </nuxt-link>
   </div>
 </template>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
